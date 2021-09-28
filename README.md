@@ -8,7 +8,7 @@ One of my first Python scripts. This particular tool is aimed at helping languag
 It consists of 3 modules:
 - speech_recognition
 *(users might additionally need to install the **pyaudio** module to make the script run properly)*
-- pyttsx3 (python text-to-speech)
+- pyttsx3 *(python text-to-speech)*
 - translators
 
 The script starts by asking us to speak (uses Google Speech Recognition API, but can be changed to a different one), then it’ll catch the text and view it in the next line. Then, it’ll be transformed into speech and played back. Finally, it’ll be translated into two languages (set to PL and CHN by default).
