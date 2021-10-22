@@ -1,6 +1,6 @@
 # Translation_Multi_Tool_Bot
 
-Translation Multi-Tool Bot (v1.0)
+###### Translation Multi-Tool Bot (v1.0)
 
 ![speech_to_translate](https://user-images.githubusercontent.com/88622607/135081092-7464673c-a8d0-4c8b-94e0-9583c679bb8f.gif)
 
