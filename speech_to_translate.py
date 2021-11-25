@@ -5,11 +5,26 @@ import time
 import sys
 import os
 
+from translators.apis import translate_html
+
 
 #initializing Speech Recognition Engine
 recog = sr.Recognizer()
 #initializing Speech-To-Text Engine
 spkEng = pyttsx3.init()
+
+def speak(phrase):
+    #speaks out the phrase caught by the SR
+    spkEng.say(phrase)
+    spkEng.runAndWait()
+
+def translate(phrase):
+    #translates the phrase
+    transPL = ts.google(phrase, from_language='en', to_language='pl')
+    print(f"POLISH: "+transPL)
+    transCN = ts.google(phrase, from_language='en', to_language='zh-CN')
+    print(f"CHINESE: "+transCN)
+    print('-------------------------------------------------\n')
 
 print('\n-------------------------------------------------')
 print(ts.google('Hello!', from_language='en', to_language='pl'))
@@ -43,16 +58,9 @@ try:
                     print('Ending script..')
                     break
 
-                #speaks out the phrase caught by the SR
-                spkEng.say(text)
-                spkEng.runAndWait()
-
-                #translates the phrase
-                transPL = ts.google(text, from_language='en', to_language='pl')
-                print(f"POLISH: "+transPL)
-                transCN = ts.google(text, from_language='en', to_language='zh-CN')
-                print(f"CHINESE: "+transCN)
-                print('-------------------------------------------------\n')
+                #speaks out the phrase and translates it
+                speak(text)
+                translate(text)
 
             #saves the script from breaking in case of SR error
             except sr.UnknownValueError:
